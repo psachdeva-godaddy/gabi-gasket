@@ -60,14 +60,7 @@ export default makeGasket({
       market: "en-us", // Locale you are attempting to render for.
       theme: "GoDaddy-dark", // CSS4 theme (default is `godaddy:brand` based on private label id)
       tealium: false,
-      traffic: "disable",
-      privateLabel: 1,
-      brand: 3,
-      local: false,
-      uxcore: false,
-      delayjs: false, // **DEPRECATED** Defaults (false): Delay's loading of the header for faster perceived load.
-      deferjs: false,
-      optOut: false,
+      traffic: "disable"
     },
   },
   data: gasketData,
