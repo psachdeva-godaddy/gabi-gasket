@@ -18,11 +18,15 @@ function Layout(props) {
 
 const App = createApp({ Layout, initialProps: true });
 
-// Wrap the app with higher-order components
 const authRequired = withAuthRequired({
   realm: "jomax",
   gasket,
 });
-export default withPageEnhancers([authRequired])(App);
+
+// Wrap the app with higher-order components
+export default [
+  withPageEnhancers([authRequired]),
+  withAuthProvider(),
+].reduce((cmp, hoc) => hoc(cmp), App);
 
 export { reportWebVitals };
