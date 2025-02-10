@@ -1,0 +1,25 @@
+@import '@ux/text/styles';
+
+.contact-card-header {
+  font-family: 1em sans-serif;
+  font-size: 15.66px;
+  font-weight: 700;
+  line-height: 19.57px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 21%;
+}
+
+.contact-card-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 19px;
+  height: 75px;
+}

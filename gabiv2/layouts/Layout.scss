@@ -1,0 +1,87 @@
+.layout-parent {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+
+  .layout-header {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0px 8px 0px 8px !important;
+    display: flex;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    background-color: black;
+
+    .header {
+      padding-top: 10px;
+
+      .headertext {
+        color: white;
+        margin: 0px;
+        padding-top: 10px;
+        font-size: 30px !important;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    height: calc(100vh - 90px);
+    max-width: calc(100% - 60px) !important;
+    width: calc(100% - 60px) !important;
+
+    .layout-leftPanel {
+      width: 20%;
+      background-color: black;
+      box-sizing: border-box;
+      padding-right: 10px;
+      border: 1px solid grey;
+      border-radius: 10px;
+
+      &.collapsed {
+        width: 3%;
+      }
+    }
+
+    .layout-middlePanel {
+      width: 60%;
+      background-color: black;
+      box-sizing: border-box;
+
+      &.collapsed {
+        width: 77%;
+      }
+
+      .middlePanelcontainer {
+        height: 100%;
+        width: 100%;
+
+        .chatView {
+          height: 85%;
+          width: auto;
+        }
+
+        .chatInput {
+          height: 5%;
+          width: auto;
+        }
+
+        .actionsForChat {
+          height: 10%;
+          width: auto;
+        }
+      }
+    }
+
+    .layout-rightPanel {
+      width: 20%;
+      background-color: black;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.button {
+  display: block;
+  margin-bottom: 10px;
+}
