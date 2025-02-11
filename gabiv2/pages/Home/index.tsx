@@ -1,7 +1,11 @@
 import { FunctionComponent } from "react";
 //import AppStateMachine from '../../contexts/AppStateMachine.ts';
 import ThreePanelLayout from "../../layouts/Layout.tsx";
-import { authGetServerSideProps, useAuthState } from "@godaddy/gasket-auth";
+import {
+  authGetServerSideProps,
+  InjectedDetails,
+  useAuthState,
+} from "@godaddy/gasket-auth";
 // import {
 //   ContactEventTypes,
 //   ContactStarted,
@@ -53,5 +57,32 @@ const HomePage: FunctionComponent = function () {
     </div>
   );
 };
-
+type ExtInjectedDetails = InjectedDetails & {
+  accountName: string;
+  groups: string[];
+};
+export type GuidePageProps = {
+  authDetails: ExtInjectedDetails;
+  ucid?: string;
+};
+export async function getServerSideProps({ req, res }) {
+  console.log("res", res.locals);
+  const props: Partial<GuidePageProps> = {};
+  //const prevPlid = res.locals.visitor.plid;
+  //res.locals.visitor.plid = undefined;
+  const { valid } = await req.checkAuth({
+    realm: "idp",
+    type: "e2s",
+  });
+  //res.locals.visitor.plid = prevPlid;
+  if (valid) {
+    const { ucid = "" } = req.gdAuth.jwt.idp.e2s;
+    Object.assign(props, {
+      ...(ucid && { ucid }),
+    });
+  }
+  return {
+    props,
+  };
+}
 export default HomePage;

@@ -23,6 +23,10 @@ const authRequired = withAuthRequired({
   realm: "jomax",
   gasket,
 });
-export default withPageEnhancers([authRequired])(App);
+
+export default [withPageEnhancers([authRequired]), withAuthProvider()].reduce(
+  (cmp, hoc) => hoc(cmp),
+  App
+);
 
 export { reportWebVitals };
