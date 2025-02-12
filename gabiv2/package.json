@@ -39,7 +39,7 @@
     "@godaddy/browserslist-config": "^3.0.1",
     "@godaddy/gasket-auth": "^3.2.1",
     "@godaddy/gasket-next": "^3.2.0",
-    "@godaddy/gasket-plugin-auth": "^3.2.2",
+    "@godaddy/gasket-plugin-auth": "^3.2.4",
     "@godaddy/gasket-plugin-dev-certs": "^3.2.1",
     "@godaddy/gasket-plugin-otel": "^3.2.1",
     "@godaddy/gasket-plugin-security": "^3.2.0",
